@@ -1,4 +1,0 @@
-﻿flask
-qrcode
-pillow
-requests
