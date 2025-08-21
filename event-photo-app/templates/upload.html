@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Photo</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; background:#fff; text-align:center; }
+    h2 { font-family: "Georgia", serif; font-style:italic; }
+    input { margin:10px; padding:10px; }
+    button { padding:10px 20px; border-radius:10px; background:#007BFF; color:white; }
+  </style>
+</head>
+<body>
+  <h2>📸 Upload for {{event.name}}</h2>
+  <p>Date: {{event.date}}</p>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="photo" accept="image/*" required><br>
+    <button type="submit">Upload</button>
+  </form>
+  <p>Limit: {{event.uploads}} / {{event.limit}}</p>
+</body>
+</html>
