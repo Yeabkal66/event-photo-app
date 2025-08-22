@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, Arial, sans-serif; text-align:center; color:#fff;
+      background: url("{{ url_for('static', filename='bg.jpg') }}") no-repeat center center fixed; background-size:cover; }
+    .box { background: rgba(0,0,0,0.6); display:inline-block; margin-top: 12vh; padding: 28px 32px; border-radius: 14px; min-width: 320px; }
+    h2 { font-family: 'Playfair Display', serif; margin-top:0; }
+    input, button { margin:10px; padding:12px 14px; border:none; border-radius:10px; width: 80%; max-width: 320px; }
+    button { background:#111; color:#fff; cursor:pointer; }
+    a { color:#ffd66e; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🔑 Admin Login</h2>
+    <form method="POST" action="/login">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+      {% if error %}<p style="color:#ffd66e;">{{ error }}</p>{% endif %}
+    </form>
+    <p>New here? <a href="/register">Create admin account</a></p>
+  </div>
+</body>
+</html>
